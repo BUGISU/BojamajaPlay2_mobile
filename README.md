@@ -49,11 +49,10 @@
 | **먼지를 털어라**    | 화면을 스와이프해 먼지를 털어내는 청소 미니게임  | <img src="Screenshots/dust.png" width="150"/>     |
 | **샌드위치를 만들어라** | 재료를 순서대로 쌓아 올려 완성하는 퍼즐형 게임  | <img src="Screenshots/sandwich.png" width="150"/> |
 
-
 ## 📸 게임 화면 & 시연
 | **타이틀 화면** | **게임 선택** | **랭킹 등록** | **결과 화면** | **상점 화면** |
 | --------------- | ------------- | ------------- | ------------- | ------------- |
-| <img src="Screenshots/293577524-61060261-96e2-4522-8d03-71b80f9b54d2.gif" height="250 "/> | <img src="Screenshots/225186490-060bb3e0-7664-40db-9c0a-2f8eb7090a74.png" height="250 "/> | <img src="Screenshots/293587153-f20ed62d-667c-464c-85ba-ca5bab3d07cf.gif" height="250 "/> | <img src="Screenshots/293587147-40f9014f-4990-49b7-9819-61444f6ca51e.gif" height="250 "/> | <img src="Screenshots/293585622-72fbe959-2dea-4efb-987c-cf7e2e4799d0.gif" height="250 "/> |
+| <img src="Screenshots/293577524-61060261-96e2-4522-8d03-71b80f9b54d2.gif" height="200"/> | <img src="Screenshots/225186490-060bb3e0-7664-40db-9c0a-2f8eb7090a74.png" height="200"/> | <img src="Screenshots/293587153-f20ed62d-667c-464c-85ba-ca5bab3d07cf.gif" height="200"/> | <img src="Screenshots/293587147-40f9014f-4990-49b7-9819-61444f6ca51e.gif" height="200"/> | <img src="Screenshots/293585622-72fbe959-2dea-4efb-987c-cf7e2e4799d0.gif" height="200"/> |
 
 ## 🔍 코드 구조 (일부)
 
