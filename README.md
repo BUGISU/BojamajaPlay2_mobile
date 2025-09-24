@@ -1,7 +1,7 @@
 # 🎮 보자마자 PLAY2 (Bojamaja PLAY2)
 
 <p align="center">
-  <img src="Screenshots/title.png" width="400" alt="보자마자 PLAY2 타이틀"/>
+  <img src="Screenshots/225186471-ada6bcce-e0bf-4c01-99f6-d2810922fb8c.png" width="400" alt="보자마자 PLAY2 타이틀"/>
 </p>
 
 **캐주얼 모바일 미니게임 모음집**
@@ -29,7 +29,8 @@
 | **랭킹 모드**  | 10개 미니게임을 랜덤 순서로 30초씩 플레이, 총 점수를 기반으로 글로벌 랭킹 등록 |
 
 <p align="center">
-  <img src="Screenshots/mode_select.gif" width="400"/>
+  <img src="Screenshots/293580842-42b0d7ef-09ca-4e7a-be8e-d89a0506c576.gif" width="400"/>
+  <img src="Screenshots/293580845-4e661747-c129-43ef-b7ea-0a9bda1696d1.gif" width="400"/>
 </p>
 
 
@@ -53,8 +54,98 @@
 
 | 화면 구분      | 이미지                                              |
 | ---------- | ------------------------------------------------ |
-| **타이틀 화면** | <img src="Screenshots/title.gif" width="300"/>   |
-| **게임 선택**  | <img src="Screenshots/select.png" width="300"/>  |
-| **랭킹 등록**  | <img src="Screenshots/ranking.gif" width="300"/> |
-| **결과 화면**  | <img src="Screenshots/result.png" width="300"/>  |
-| **상점 화면**  | <img src="Screenshots/shop.gif" width="300"/>    |
+| **타이틀 화면** | <img src="Screenshots/293577524-61060261-96e2-4522-8d03-71b80f9b54d2.gif" width="300"/>   |
+| **게임 선택**  | <img src="Screenshots/225186490-060bb3e0-7664-40db-9c0a-2f8eb7090a74.png" width="300"/>  |
+| **랭킹 등록**  | <img src="Screenshots/293587153-f20ed62d-667c-464c-85ba-ca5bab3d07cf.gif" width="300"/> |
+| **결과 화면**  | <img src="Screenshots/293587147-40f9014f-4990-49b7-9819-61444f6ca51e.gif" width="300"/>  |
+| **상점 화면**  | <img src="Screenshots/293585622-72fbe959-2dea-4efb-987c-cf7e2e4799d0.gif" width="300"/>    |
+
+맞습니다 👍 지금 버전은 게임 소개와 결과물 위주라 **코드/기술적 구조 설명**은 빠져 있네요.
+개발자 포트폴리오 용도라면, 반드시 **코드 구조 + 주요 스크립트 예시**를 넣는 게 좋아요.
+
+제가 추천하는 방식은 다음과 같이 2단계로 정리하는 거예요:
+
+---
+
+## 🔍 코드 구조 (일부)
+
+```
+BojamajaPLAY2/
+├── Managers/
+│   ├── GameManager.cs        # 전체 게임 진행 관리 (모드 전환, 타이머)
+│   ├── ScoreManager.cs       # 점수, 별 획득 계산
+│   ├── RankingManager.cs     # Firebase 기반 랭킹 등록/조회
+│   └── UIManager.cs          # 화면 전환 및 UI 흐름
+│
+├── Games/
+│   ├── ToyAssemble.cs        # 장난감 조립 게임 로직
+│   ├── BowlingGame.cs        # 볼링 미니게임
+│   ├── ZombieDefense.cs      # 좀비 방어 게임
+│   └── ...                   # 나머지 미니게임 스크립트
+│
+├── Ads/
+│   └── AdManager.cs          # AdMob 보상형 광고 처리
+```
+
+---
+
+## 📂 주요 코드 예시
+
+```csharp
+// GameManager.cs
+public class GameManager : MonoBehaviour
+{
+    public int totalScore = 0;
+    public int currentGame = 0;
+
+    public void AddScore(int score)
+    {
+        totalScore += score;
+    }
+
+    public void NextGame()
+    {
+        currentGame++;
+        if (currentGame >= 10) ShowResult();
+        else LoadNextGame();
+    }
+}
+```
+
+```csharp
+// ScoreManager.cs (클래식 모드 - 별 획득 로직)
+public int GetStarRating(int score)
+{
+    if (score >= 5000) return 3;
+    if (score >= 3000) return 2;
+    return 1;
+}
+```
+
+```csharp
+// RankingManager.cs (Firebase 연동)
+public void SubmitScore(string nickname, int score)
+{
+    DatabaseReference dbRef = FirebaseDatabase.DefaultInstance.RootReference;
+    string key = dbRef.Child("ranking").Push().Key;
+
+    RankData data = new RankData(nickname, score);
+    string json = JsonUtility.ToJson(data);
+    dbRef.Child("ranking").Child(key).SetRawJsonValueAsync(json);
+}
+```
+
+```csharp
+// AdManager.cs (보상형 광고 처리)
+public void ShowRewardedAd()
+{
+    if (rewardedAd.IsLoaded())
+    {
+        rewardedAd.Show();
+        rewardedAd.OnUserEarnedReward += (sender, args) =>
+        {
+            PlayerData.Diamond += 10; // 보상 지급
+        };
+    }
+}
+```
