@@ -40,9 +40,9 @@
 | ----------------------- | ----------------------------------------------- | ------------------------------------------------- |
 | **장난감을 조립하라**   | 주어진 블록을 순서대로 배치해 완성하기          | <img src="Screenshots/Toy.PNG" width="150"/>      |
 | **볼링공을 굴려라**     | 볼링공을 굴려 핀을 쓰러뜨리는 캐주얼 게임       | <img src="Screenshots/Bowling.PNG" width="150"/>  |
-| **해적선을 맞춰라**     | 대포를 발사해 해적선을 명중시키는 슈팅 게임     | <img src="Screenshots/Pirate.PNG" width="150"/>   |
-| **전골을 끓여라**       | 재료를 순서대로 넣어 요리를 완성하는 게임       | <img src="Screenshots/Soup.PNG" width="150"/>     |
-| **보석을 찾아라**       | 숨겨진 보석을 찾아 터치하는 미니 퍼즐           | <img src="Screenshots/Jewel.PNG" width="150"/>    |
+| **해적선을 맞춰라**     | 대포를 발사해 해적선을 명중시키는 슈팅 게임     | <img src="Screenshots/Pirates.PNG" width="150"/>  |
+| **전골을 끓여라**       | 재료를 순서대로 넣어 요리를 완성하는 게임       | <img src="Screenshots/Hotpot.PNG" width="150"/>   |
+| **보석을 찾아라**       | 숨겨진 보석을 찾아 터치하는 미니 퍼즐           | <img src="Screenshots/Submarin.PNG" width="150"/> |
 | **축구공을 넣어라**     | 축구공을 골대 안으로 넣는 미니 스포츠 게임      | <img src="Screenshots/Soccer.PNG" width="150"/>   |
 | **좀비를 막아라**       | 다가오는 좀비를 터치로 막아내는 액션 게임       | <img src="Screenshots/Zombie.PNG" width="150"/>   |
 | **피자 도우를 돌려라**  | 도우를 돌려 일정 크기로 만드는 타이밍 액션 게임 | <img src="Screenshots/Pizza.PNG" width="150"/>    |
